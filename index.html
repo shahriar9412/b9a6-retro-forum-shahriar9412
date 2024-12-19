@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro Forum</title>
+    <!-- daisy ui and tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="mx-2 lg:mx-20">
+        <nav class="my-10 flex justify-between flex-col gap-3 lg:flex-row">
+            <div>
+                <h1 class="text-black font-extrabold text-4xl">ReTro</h1>
+            </div>
+            <div class="flex flex-col gap-3 lg:flex-row">
+                <div>
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Edit">
+                        <button class="btn rounded-full"><i class="fa-solid fa-pen"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Add User">
+                        <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Flag">
+                        <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
+                    </div>
+
+                </div>
+                <div>
+                    <button class="px-6 py-3 bg-[#797DFC] ml-8 text-white rounded-3xl">Sign In</button>
+                </div>
+            </div>
+        </nav>
+
+        <div
+            class="flex justify-between flex-col pl-5 lg:flex-row bg-[url(images/bgbanner.png)] bg-no-repeat rounded-3xl bg-[#12132D] bg-cover py-20 pr-20">
+            ">
+            <div class="lg:w-[50%]">
+                <h1 class="text-3xl lg:text-6xl font-extrabold text-white pb-5"> Welcome to the</h1>
+                <h1 class="text-3xl lg:text-6xl font-extrabold text-white"><span class="text-[#797DFC]">ReTro</span>
+                    Forum</h1>
+                <h2 class="my-10 text-white w-[70%]">Share your favorite opinion and win and wp
+                    forum coffee mug!</h2>
+                <div class="w-[70%] flex justify-between my-5 bg-white pl-2 rounded-3xl">
+                    <input id="search-field" type="text" placeholder="Search here anything"
+                        class="focus:border-none focus:outline-none ml-4 bg-transparent" />
+                    <button onclick="handleSearch()"
+                        class="px-6 py-1 bg-[#797DFC] text-white m-2 rounded-3xl">Search</button>
+                </div>
+            </div>
+            <div class="lg:w-[35%] flex justify-between items-center rounded-3xl bg-white p-10">
+                <div class="flex flex-col gap-2 text-2xl">
+                    <p>Registered Users</p>
+                    <p>Forum</p>
+                    <p>Topics</p>
+                    <p>Replies</p>
+                </div>
+                <div class="flex flex-col gap-2 text-2xl">
+                    <p>01</p>
+                    <p>05</p>
+                    <p>01</p>
+                    <p>01</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-2 lg:mx-20">
+        <!-- lets discuss section -->
+        <div class="text-center mt-5 lg:mt-20">
+            <h1 class="text-black text-3xl font-bold">Let’s Discuss</h1>
+            <h1 class="my-5 lg:mx-[300px]"> Yes, you can run unit tests and view the results directly within the app.
+                The
+                integrated testing features allow for a streamlined .</h1>
+        </div>
+        <div class="my-10">
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner text-primary loading-lg"></span>
+            </div>
+            <div class="flex justify-between">
+                <div id="article-container" class="w-[60%]">
+
+                </div>
+                <div id="article-count" class="w-[35%]">
+
+                    <div class="p-3 rounded-2xl bg-[#F3F3F5]">
+
+                        <div class="flex justify-between">
+                            <div>
+                                <h1 class="font-bold text-black text-xl">Title</h1>
+                            </div>
+                            <div>
+                                <h1><i class="fa-solid fa-check-double mr-2" style="color: #6fec94;"></i>Mark as read
+                                    (<span id="counter">0</span>)</h1>
+                            </div>
+                        </div>
+                        <div id="read-article">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- join our forum banner -->
+        <div class="px-20 pt-10 bg-[#12132D] rounded-3xl flex justify-between">
+            <div class="w-[70%] ">
+                <h1 class="font-extrabold text-5xl text-white">Join Our Forum</h1>
+                <h1 class="my-4 w-[80%] text-white"> Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                    run unit tests and view the results directly within the app.
+
+                </h1>
+                <button class="px-6 py-3 bg-[#797DFC] text-white rounded-3xl">Registered Now</button>
+
+            </div>
+            <div>
+                <img src="images/joinforum.png" alt="">
+            </div>
+        </div>
+        <!-- latest posts section -->
+        <div>
+            <div class="text-center mt-5 lg:mt-20">
+                <h1 class="text-black text-3xl font-bold">Latest Posts</h1>
+                <h1 class="my-5 lg:mx-[300px]"> Yes, you can run unit tests and view the results directly within the
+                    app.
+                    The
+                    integrated testing features allow for a streamlined .</h1>
+
+            </div>
+            <div class="py-10" id="post-container">
+
+            </div>
+
+        </div>
+    </main>
+    <!-- footer section -->
+    <footer class="bg-orange-50 px-10 py-20">
+        <h1 class="text-black font-bold text-4xl text-center">ReTro</h1>
+        <h1 class="text-center mx-[300px] my-5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a 
+            piece of classical Latin literature from 45 BC</h1>
+            <div class="flex flex-row gap-3 justify-center mb-5">
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <hr>
+            <h1 class="mt-5 text-center"> 2017, All Rights Reserved.</h1>
+
+    </footer>
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+</body>
+
+</html>
